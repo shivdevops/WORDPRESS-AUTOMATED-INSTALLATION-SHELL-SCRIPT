@@ -1,14 +1,14 @@
 #!/bin/bash
        # provide the root directory path (eg:/var/www/html/ or /opt/vhost/)
-       ROOT_DIRECTORY_PATH="/var/www/html/"
+       ROOT_DIRECTORY_PATH="your-root-directory-path"
        # provide the directory name i.e create a directory in root directory to copy the wordpress files 
-       DIRECTORY_NAME="mithun"
+       DIRECTORY_NAME="your-wordpress-root-directory-name"
        #provide the database name, create a database 
-       DB_NAME="wordpress_3"
+       DB_NAME="your-database-name"
        #provide the database user name.
-       DB_USER="root"
+       DB_USER="your-database-user-name"
        #provide the database password
-       DB_PASSWORD="Sm@ck5403"
+       DB_PASSWORD="your-database-password"
 echo
 echo
 
@@ -83,5 +83,9 @@ echo
 	#prints the database password in wp-config,php
 	password=$(grep password_here "$WP_CONFIG_FILE" | cut -d"'" -f4)
 	sed -i "s/$password/$DB_PASSWORD/g" "$WP_CONFIG_FILE"
+
+	cd  /tmp
+	rm -rf latest.tar.gz
+	rm -rf wordpress
 
 	echo "sucessfully installed wordpress";
