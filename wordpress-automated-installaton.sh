@@ -38,7 +38,7 @@ echo
 	apt install php$CURRENT-zip  -y > /dev/null 2>&1
 echo
 echo
-	echo "installing wordprss...";
+	echo "installing wordpress...";
 echo
 echo   
 
@@ -85,7 +85,9 @@ echo
 	sed -i "s/$password/$DB_PASSWORD/g" "$WP_CONFIG_FILE"
 
 	cd  /tmp
+	#removes the downloaded wordpress tar
 	rm -rf latest.tar.gz
+	#removes the temporary wordpress file
 	rm -rf wordpress
 
 	echo "sucessfully installed wordpress";
