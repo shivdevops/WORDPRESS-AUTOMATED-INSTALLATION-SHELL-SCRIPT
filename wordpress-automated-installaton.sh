@@ -91,3 +91,7 @@ echo
 	rm -rf wordpress
 
 	echo "sucessfully installed wordpress";
+	
+echo
+echo
+	echo "check in your browser by: or by: https://yourdomain or  https://yourdomain/$DIRECTORY_NAME  or by:http://your-ip/$DIRECTORY_NAME";
