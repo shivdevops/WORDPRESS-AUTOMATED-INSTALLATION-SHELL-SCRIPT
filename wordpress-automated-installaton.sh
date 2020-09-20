@@ -1,12 +1,16 @@
 #!/bin/bash
        # provide the root directory path (eg:/var/www/html/ or /opt/vhost/)
        ROOT_DIRECTORY_PATH="your-root-directory-path"
+       
        # provide the directory name i.e create a directory in root directory to copy the wordpress files 
        DIRECTORY_NAME="your-wordpress-root-directory-name"
+       
        #provide the database name, create a database 
        DB_NAME="your-database-name"
+       
        #provide the database user name.
        DB_USER="your-database-user-name"
+       
        #provide the database password
        DB_PASSWORD="your-database-password"
 echo
