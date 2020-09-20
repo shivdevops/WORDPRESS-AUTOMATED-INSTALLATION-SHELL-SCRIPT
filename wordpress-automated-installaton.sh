@@ -11,7 +11,9 @@
        DB_PASSWORD="your-database-password"
 echo
 echo
-
+       #install curl
+       apt install curl -y 
+       
        echo  "Downloading Wordpresss..." 
        #changes into tmp directory	
        cd /tmp
