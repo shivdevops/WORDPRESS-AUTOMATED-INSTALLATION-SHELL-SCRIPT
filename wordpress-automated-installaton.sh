@@ -5,7 +5,7 @@
        # provide the directory name i.e create a directory in root directory to copy the wordpress files 
        DIRECTORY_NAME="your-wordpress-root-directory-name"
        
-       #provide the database name, create a database 
+       #provide the already created empty database name.
        DB_NAME="your-database-name"
        
        #provide the database user name.
