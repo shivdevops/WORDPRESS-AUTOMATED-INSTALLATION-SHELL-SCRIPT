@@ -1,17 +1,23 @@
 #!/bin/bash
        # provide the root directory path (eg:/var/www/html/ or /opt/vhost/)
        ROOT_DIRECTORY_PATH="your-root-directory-path"
+       
        # provide the directory name i.e create a directory in root directory to copy the wordpress files 
        DIRECTORY_NAME="your-wordpress-root-directory-name"
-       #provide the database name, create a database 
+       
+       #provide the already created empty database name.
        DB_NAME="your-database-name"
+       
        #provide the database user name.
        DB_USER="your-database-user-name"
+       
        #provide the database password
        DB_PASSWORD="your-database-password"
 echo
 echo
-
+       #install curl
+       apt install curl -y 
+       
        echo  "Downloading Wordpresss..." 
        #changes into tmp directory	
        cd /tmp
@@ -106,7 +112,7 @@ fi
 
 echo
 echo
-	echo "installing wordprss...";
+	echo "installing wordpress...";
 echo
 echo   
 
@@ -153,7 +159,13 @@ echo
 	sed -i "s/$password/$DB_PASSWORD/g" "$WP_CONFIG_FILE"
 
 	cd  /tmp
+	#removes the downloaded wordpress tar
 	rm -rf latest.tar.gz
+	#removes the temporary wordpress file
 	rm -rf wordpress
 
 	echo "sucessfully installed wordpress";
+	
+echo
+echo
+	echo "check in your browser by: or by: https://yourdomain or  https://yourdomain/$DIRECTORY_NAME  or by:http://your-ip/$DIRECTORY_NAME";
