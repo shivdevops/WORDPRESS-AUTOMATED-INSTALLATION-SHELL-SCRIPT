@@ -23,19 +23,87 @@ echo
        tar xzf latest.tar.gz
 echo
 echo
-	echo " Installig php dependencies..."
-	
+
+	echo "Checking and  Installig needed php dependencies..."
+
 	#installing the php dependencies
 	CURRENT=$(php -v | head -n 1 | cut -d " " -f 2 | cut -f1-2 -d".")
 
+
+	SOAP=$(php$CURRENT -m | grep -w soap | awk '{ print$1}')
+
+if [  "$SOAP" != "soap"  ]; then
+
+	echo " Installing php$CURRENT-soap"
 	apt install php$CURRENT-soap  -y > /dev/null 2>&1
-	apt install php$CURRENT-curl  -y > /dev/null 2>&1
-	apt install php$CURRENT-gd  -y > /dev/null 2>&1
-	apt install php$CURRENT-mbsting  -y > /dev/null 2>&1
-	apt install php$CURRENT-xml  -y > /dev/null 2>&1
-	apt install php$CURRENT-xmlprc  -y > /dev/null 2>&1
-	apt install php$CURRENT-intl  -y > /dev/null 2>&1
-	apt install php$CURRENT-zip  -y > /dev/null 2>&1
+
+fi
+
+        CURL=$(php$CURRENT -m | grep -w curl | awk '{ print$1}')
+
+if [  "$CURL" != "curl"  ]; then
+
+	echo " Installing php$CURRENT-curl"
+        apt install php$CURRENT-curl  -y > /dev/null 2>&1
+
+fi
+
+        GD=$(php$CURRENT -m | grep -w gd | awk '{ print$1}')
+
+if [  "$GD" != "gd"  ]; then
+
+	echo " Installing php$CURRENT-gd"
+        apt install php$CURRENT-gd  -y > /dev/null 2>&1
+
+fi
+
+       MBSTRING=$(php$CURRENT -m | grep -w mbstring | awk '{ print$1}')
+
+if [  "$MBSTRING" != "mbstring"  ]; then
+
+	echo " Installing php$CURRENT-mbstring"
+        apt install php$CURRENT-mbstring  -y > /dev/null 2>&1
+
+fi
+
+       XML=$(php$CURRENT -m | grep -w xml | awk '{ print$1}')
+
+if [  "$XML" != "xml"  ]; then
+
+	echo " Installing php$CURRENT-xml"
+        apt install php$CURRENT-xml  -y > /dev/null 2>&1
+
+fi
+
+       XMLRPC=$(php$CURRENT -m | grep -w xmlrpc | awk '{ print$1}')
+
+
+if [  "$XMLRPC" != "xmlrpc"  ]; then
+
+	echo " Installing php$CURRENT-xmlprc"
+        apt install php$CURRENT-xmlrpc  -y > /dev/null 2>&1
+
+fi
+
+       INTL=$(php$CURRENT -m | grep -w intl | awk '{ print$1}')
+
+if [  "$INTL" != "intl"  ]; then
+
+	echo " Installing php$CURRENT-intl"
+        apt install php$CURRENT-intl  -y > /dev/null 2>&1
+
+fi
+
+
+       ZIP=$(php$CURRENT -m | grep -w zip | awk '{ print$1}')
+
+if [  "$ZIP" != "zip"  ]; then
+
+	echo " Installing php$CURRENT-zip"
+        apt install php$CURRENT-zip  -y > /dev/null 2>&1
+
+fi
+
 echo
 echo
 	echo "installing wordprss...";
