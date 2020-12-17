@@ -3,7 +3,7 @@
        ROOT_DIRECTORY_PATH="your-root-directory-path"
        
        # provide the directory name i.e create a directory in root directory to copy the wordpress files 
-       DIRECTORY_NAME="your-wordpress-root-directory-name"
+       DIRECTORY_NAME="your-wordpress-instance-name"
        
        #provide the already created empty database name.
        DB_NAME="your-database-name"
