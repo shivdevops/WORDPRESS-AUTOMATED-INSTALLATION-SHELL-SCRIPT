@@ -26,7 +26,7 @@
  **Install the above prereqistes before running the script and add the following changes in the shell script.**
  
  * Provide your root directory path by replacing the default value **"your-root-directory-path"** i.e eg: /var/www/html or /opt/vhost.(line no:3 in shell script)
- * Provide your directory name for wordpress files stored in root directory by replacing the default value **"your-wordpress-root-directory-name"**.(line no:5 in shell script)
+ * Provide your directory name for wordpress files stored in root directory by replacing the default value **"your-wordpress-instance-name"**.(line no:5 in shell script)
  * Create database, Provide your database name by replacing the the default value **"your-database-name"**.(line no:7 in shell script)
  * Provide  your database user name by replacing the the default value **"your-database-user-name"**.(line no:9 in shell script)
  * Provide your data base password name by replacing the default value **"your-database-password"**.(line no:11 in shell script)
